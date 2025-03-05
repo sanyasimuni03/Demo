@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: InsuranceProviderService
+
+server:
+  port: 6868
+
+aetna:
+  client:
+    id: "675de5ddbcf0953cffd3a7e4830faa34"
+    secret: "559ecf755c2cc6c4794f6da0e4957c8f"
+  auth-url: "https://vteapif1.aetna.com/fhirdemo/v1/fhirserver_auth/oauth2/authorize"
+  callback-url: "http://your-application.com/registered/callback"
+  scopes: "launch/patient%20patient/*.read"
+  aud: "https://vteapif1.aetna.com/fhirdemo"
+  token-exchange-url: "https://vteapif1.aetna.com/fhirdemo/v1/fhirserver_auth/oauth2/token"
+  patient-verification-url: "https://vteapif1.aetna.com/fhirdemo/v2/patientaccess/Patient"
+  redirect-url: "http://localhost:3000/patient"
+  error-url: "http://localhost:3000/error"
+
+bluebutton:
+  client:
+    id: "zPc4ItwSvCnJF5HZGANi6Xmv7PQH65KI0h6xXKO6"
+    secret: "RuUM4jEhkogN9TEFGB1l4QXnMIit4Fq6AkIaAB3A2m8YWFSKQm55pWTUWfoNpRzWYN4RZ7koer6Q1TEqis8d4r8kramWPaQyI7wOlgcWFCf1J8TcN1hH4NQXA6eAVWTf"
+  auth-url: "https://sandbox.bluebutton.cms.gov/v2/o/authorize"
+  callback-url: "https://oauth.pstmn.io/v1/browser-callback"
+  scopes: "patient/ExplanationOfBenefit.read"
+  aud: "https://sandbox.bluebutton.cms.gov/v2/fhir/"
+  token-exchange-url: "https://sandbox.bluebutton.cms.gov/v2/o/token/"
+  patient-verification-url: "https://sandbox.bluebutton.cms.gov/v2/fhir/Patient"
+  redirect-url: "http://localhost:3000/patient"
+  error-url: "http://localhost:3000/error"
+
+humana:
+  client:
+    id: "1ae21e32-868f-4133-8349-a8c13fe3b881"
+    secret: "2fdabac4d1e2b67076198ae0c8ce7c447c0f86ff"
+  auth-url: "https://sandbox-fhir.humana.com/auth/authorize/"
+  callback-url: "http://localhost:8080/humana/token"
+  scopes: "patient/Patient.read patient/Observation.read"
+  aud: "https://sandbox-fhir.humana.com/"
+  token-exchange-url: "https://sandbox-fhir.humana.com/auth/token"
+  patient-verification-url: "https://sandbox-fhir.humana.com/api/Patient"
+  redirect-url: "http://localhost:3000/patient"
+  error-url: "http://localhost:3000/error"
